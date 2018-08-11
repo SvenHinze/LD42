@@ -1,0 +1,1 @@
+return [irandom_range(0, 3), irandom_range(0, 3)];
