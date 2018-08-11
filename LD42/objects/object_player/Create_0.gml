@@ -1,1 +1,1 @@
-hp = 100;
+image_speed = 1.05;
