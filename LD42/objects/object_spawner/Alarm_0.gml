@@ -5,4 +5,6 @@ else								   _pattern = random_pattern();
 
 create_round(_pattern[0], _pattern[1]);
 
-alarm[0] = cycle;
+alarm[0] = global.points >= 30 ? global.tact : global.doubletact;
+
+//if(++cycles % 4 == 0) alarm[0]--;

@@ -17,7 +17,11 @@ switch(_color)
 
 with(_package)
 {
-	spd = floor(game_manager.points/12) + 5; 
+	//spd = floor(global.points/12) + 5;
+	
+	//spd = 7.35;
+	
+	spd = 5.075;
 	
 	vx = 0;
 	vy = spd;

@@ -1,1 +1,1 @@
-if(frames++ >= 2) instance_destroy();
+if(frames++ >= 1) instance_destroy();

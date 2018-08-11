@@ -1,3 +1,3 @@
-instance_create_layer(0, 0, "Instances", object_red_flash);
+error();
 
 game_manager.strikes++;

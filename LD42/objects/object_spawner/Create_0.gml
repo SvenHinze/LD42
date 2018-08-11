@@ -2,15 +2,15 @@ event_inherited();
 
 global.spawner = self;
 
-cycle = 180;
+alarm[0] = global.doubletact;
 
-alarm[0] = 1;
+cycles = 0;
 
 tutorial_rounds = ds_stack_create();
 
-var cycle90        = [90];
-var cycle90_130    = [90, 40];
-var cycle50_90_130 = [50, 40, 40]; 
+var cycle1  = [1];
+var cycle2  = [1, global.halftact];
+var cycle4  = [1, global.quartertact, global.quartertact, global.quartertact]; 
 
 var package_greenA = [BUTTON_A, COLOR_GREEN];
 var package_greenB = [BUTTON_B, COLOR_GREEN];
@@ -34,7 +34,7 @@ var package_yellowY = [BUTTON_Y, COLOR_YELLOW];
 
 var pattern_greenA = 
 [
-	cycle90, 
+	cycle1, 
 	[
 		package_greenA
 	]
@@ -42,7 +42,7 @@ var pattern_greenA =
 
 var pattern_greenA_greenA = 
 [
-	cycle90_130,
+	cycle2,
 	[
 		package_greenA,
 		package_greenA
@@ -51,7 +51,7 @@ var pattern_greenA_greenA =
 
 var pattern_redB =
 [
-	cycle90,
+	cycle1,
 	[
 		package_redB
 	]
@@ -59,7 +59,7 @@ var pattern_redB =
 
 var pattern_greenA_redB =
 [
-	cycle90_130,
+	cycle2,
 	[
 		package_greenA,
 		package_redB
@@ -68,7 +68,7 @@ var pattern_greenA_redB =
 
 var pattern_greenA_blueX =
 [
-	cycle90_130,
+	cycle2,
 	[
 		package_greenA,
 		package_blueX
@@ -77,56 +77,60 @@ var pattern_greenA_blueX =
 
 var pattern_greenA_yellowY =
 [
-	cycle90_130,
+	cycle2,
 	[
 		package_greenA,
 		package_yellowY
 	]
 ];
 
-var pattern_yellowY_greenA_yellowY =
+var pattern_yellowY_greenA_yellowY_greenA =
 [
-	cycle50_90_130,
+	cycle4,
 	[
 		package_yellowY,
 		package_greenA,
-		package_yellowY
-	]
-];
-
-var pattern_redB_blueX_redB = 
-[
-	cycle50_90_130,
-	[
-		package_redB,
-		package_blueX,
-		package_redB
-	]
-];
-
-var pattern_greenA_redB_blueX =
-[
-	cycle50_90_130,
-	[
-		package_greenA,
-		package_redB,
-		package_blueX
-	]
-];
-
-var pattern_redB_yellowY_greenA = 
-[
-	cycle50_90_130,
-	[
-		package_redB,
 		package_yellowY,
 		package_greenA
 	]
 ];
 
+var pattern_redB_blueX_redB_blueX = 
+[
+	cycle4,
+	[
+		package_redB,
+		package_blueX,
+		package_redB,
+		package_blueX
+	]
+];
+
+var pattern_greenA_redB_blueX_yellowY =
+[
+	cycle4,
+	[
+		package_greenA,
+		package_redB,
+		package_blueX,
+		package_yellowY
+	]
+];
+
+var pattern_redB_yellowY_greenA_blueX = 
+[
+	cycle4,
+	[
+		package_redB,
+		package_yellowY,
+		package_greenA,
+		package_blueX
+	]
+];
+
 var pattern_blueX =
 [
-	cycle90,
+	cycle1,
 	[
 		package_blueX,
 	]
@@ -134,7 +138,7 @@ var pattern_blueX =
 
 var pattern_blueB =
 [
-	cycle90,
+	cycle1,
 	[
 		package_blueB
 	]
@@ -142,7 +146,7 @@ var pattern_blueB =
 
 var pattern_greenA_yellowB =
 [
-	cycle90_130,
+	cycle2,
 	[
 		package_greenA,
 		package_yellowB
@@ -151,35 +155,36 @@ var pattern_greenA_yellowB =
 
 var pattern_redX_blueA = 
 [
-	cycle90_130,
+	cycle2,
 	[
 		package_redX,
 		package_blueA
 	]
 ];
 
-var pattern_yellowX_greenA_blueA = 
+var pattern_yellowX_greenA_blueA_blueX = 
 [
-	cycle50_90_130,
+	cycle4,
 	[
 		package_yellowX,
 		package_greenA,
-		package_blueA
+		package_blueA,
+		package_blueX
 	]
 ];
 
 
-if(!SKIP_TUTORIAL)
+if(!DEBUG)
 {
-	ds_stack_push(tutorial_rounds, pattern_yellowX_greenA_blueA);
+	ds_stack_push(tutorial_rounds, pattern_yellowX_greenA_blueA_blueX);
 	ds_stack_push(tutorial_rounds, pattern_redX_blueA);
 	ds_stack_push(tutorial_rounds, pattern_greenA_yellowB);
 	ds_stack_push(tutorial_rounds, pattern_blueB);
 	ds_stack_push(tutorial_rounds, pattern_blueX);
-	ds_stack_push(tutorial_rounds, pattern_redB_yellowY_greenA);
-	ds_stack_push(tutorial_rounds, pattern_greenA_redB_blueX);
-	ds_stack_push(tutorial_rounds, pattern_redB_blueX_redB);
-	ds_stack_push(tutorial_rounds, pattern_yellowY_greenA_yellowY);
+	ds_stack_push(tutorial_rounds, pattern_redB_yellowY_greenA_blueX);
+	ds_stack_push(tutorial_rounds, pattern_greenA_redB_blueX_yellowY);
+	ds_stack_push(tutorial_rounds, pattern_redB_blueX_redB_blueX);
+	ds_stack_push(tutorial_rounds, pattern_yellowY_greenA_yellowY_greenA);
 	ds_stack_push(tutorial_rounds, pattern_greenA);
 	ds_stack_push(tutorial_rounds, pattern_greenA_yellowY);
 	ds_stack_push(tutorial_rounds, pattern_greenA_blueX);

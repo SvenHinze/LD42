@@ -6,28 +6,24 @@ var Y = keyboard_check_pressed(ord("Y")) || gamepad_button_check_pressed(0, gp_f
 
 if(A)
 {
-	create_hitbox(x + 128, y + 60, BUTTON_A);
-	object_launcher.activated = true;
+	launch(BUTTON_A);
 	exit;
 }
 	
 if(B)
 {
-	create_hitbox(x + 128, y + 60, BUTTON_B);
-	object_launcher.activated = true;
+	launch(BUTTON_B);
 	exit;
 }
 
 if(X)
 {
-	create_hitbox(x + 128, y + 60, BUTTON_X);
-	object_launcher.activated = true;
+	launch(BUTTON_X);
 	exit;
 }
 
 if(Y)
 {
-	create_hitbox(x + 128, y + 60, BUTTON_Y);
-	object_launcher.activated = true;
+	launch(BUTTON_Y);
 	exit;
 }

@@ -1,3 +1,3 @@
 frames = 0;
 
-visible = false;
+visible = DEBUG;

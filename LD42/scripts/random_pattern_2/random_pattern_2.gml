@@ -1,8 +1,8 @@
 var pattern =
 [
 	[
-		90, 
-		40
+		1, 
+		global.halftact
 	],
 	[
 		random_package(),

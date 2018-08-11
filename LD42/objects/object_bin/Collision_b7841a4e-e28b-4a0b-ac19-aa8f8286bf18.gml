@@ -1,7 +1,7 @@
 if(other.button == button)
 {
 	points++;
-	game_manager.points++;
+	global.points++;
 }
 else
 {

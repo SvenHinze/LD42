@@ -1,10 +1,10 @@
 var pattern =
 [
 	[
-		40, 
-		40,
-		40,
-		40
+		1, 
+		global.quartertact,
+		global.quartertact,
+		global.quartertact
 	],
 	[
 		random_package(),

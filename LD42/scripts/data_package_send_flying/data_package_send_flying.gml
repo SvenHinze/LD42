@@ -3,23 +3,23 @@
 switch(argument0)
 {
 	case BUTTON_A:
-		vx = 14;
-		vy = -8;
+		vx = 16.5;
+		vy = -8.5;
 	break;
 	
 	case BUTTON_B:
-		vx = 19.5;
-		vy = -10;
+		vx = 21;
+		vy = -13.5;
 	break;
 	
 	case BUTTON_X:
-		vx = 23.25;
-		vy = -12;
+		vx = 25.25;
+		vy = -15.25;
 	break;
 	
 	case BUTTON_Y:
 		vx =  25.5;
-		vy = -14.5;
+		vy = -19.25;
 	break;
 }
 
