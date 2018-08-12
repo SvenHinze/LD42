@@ -11,5 +11,7 @@ draw_text_centered(anchor_x, anchor_y, string(global.points));
 
 draw_set_font(font_pixel_big);
 
+draw_text_centered(anchor_x, anchor_y + 48, "HIGHSCORE: " + string(highscore));
+
 draw_text_centered(anchor_x, anchor_y*1.9, "Thank you for playing!");
 

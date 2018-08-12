@@ -27,6 +27,28 @@ with(_package)
 	vy = spd;
 	
 	button = _button;
+	
+	switch(button)
+	{
+		case BUTTON_A: text = "A"; break;
+		case BUTTON_B: text = "B"; break;
+		case BUTTON_X: text = "X"; break;
+		case BUTTON_Y: text = "Y"; break;
+	}
+
+	if(global.points >= 70)
+	{
+		if(random(1) >= max(70/global.points, 0.5))
+		{
+			switch(button)
+			{
+				case BUTTON_A: text = "1"; break;
+				case BUTTON_B: text = "2"; break;
+				case BUTTON_X: text = "3"; break;
+				case BUTTON_Y: text = "4"; break;
+			}
+		}
+	}
 }
 
 return _package;

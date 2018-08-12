@@ -10,12 +10,12 @@ tutorial_rounds = ds_stack_create();
 
 var cycle1  = [1];
 var cycle2  = [1, global.halftact];
-var cycle4  = [1, global.quartertact, global.quartertact, global.quartertact]; 
+var cycle4  = [1, global.quartertact, global.quartertact+1, global.quartertact+1]; 
 
 var package_greenA = [BUTTON_A, COLOR_GREEN];
 var package_greenB = [BUTTON_B, COLOR_GREEN];
 var package_greenX = [BUTTON_X, COLOR_GREEN];
-var package_greenY = [BUTTON_X, COLOR_GREEN]; 
+var package_greenY = [BUTTON_Y, COLOR_GREEN]; 
 
 var package_redA = [BUTTON_A, COLOR_RED];
 var package_redB = [BUTTON_B, COLOR_RED];
@@ -49,10 +49,11 @@ var pattern_greenA_greenA =
 	]
 ];
 
-var pattern_redB =
+var pattern_redB_redB =
 [
-	cycle1,
+	cycle2,
 	[
+		package_redB,
 		package_redB
 	]
 ];
@@ -189,7 +190,7 @@ if(!DEBUG)
 	ds_stack_push(tutorial_rounds, pattern_greenA_yellowY);
 	ds_stack_push(tutorial_rounds, pattern_greenA_blueX);
 	ds_stack_push(tutorial_rounds, pattern_greenA_redB);
-	ds_stack_push(tutorial_rounds, pattern_redB);
+	ds_stack_push(tutorial_rounds, pattern_redB_redB);
 	ds_stack_push(tutorial_rounds, pattern_greenA_greenA);
 	ds_stack_push(tutorial_rounds, pattern_greenA);
 }

@@ -8,5 +8,5 @@
 #macro COLOR_BLUE   2
 #macro COLOR_YELLOW 3
 
-#macro DEBUG true
+#macro DEBUG false
 

@@ -11,6 +11,6 @@
 //}
 
 
-if(random(1) >= global.points/50) return random_pattern_2();
+if(random(1) >= global.points/80) return random_pattern_2();
 
 return random_pattern_4();

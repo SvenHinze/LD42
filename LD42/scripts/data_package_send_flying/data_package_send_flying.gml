@@ -8,22 +8,22 @@ switch(argument0)
 	break;
 	
 	case BUTTON_B:
-		vx = 21;
-		vy = -13.5;
+		vx = 21.25;
+		vy = -13.75;
 	break;
 	
 	case BUTTON_X:
-		vx = 25.25;
-		vy = -15.25;
+		vx = 23.5;
+		vy = -16.75;
 	break;
 	
 	case BUTTON_Y:
-		vx =  25.5;
-		vy = -19.25;
+		vx =  25.25;
+		vy = -19.55;
 	break;
 }
 
 
-vr = 15;
+vr = 20;
 
 grav = 1.5;

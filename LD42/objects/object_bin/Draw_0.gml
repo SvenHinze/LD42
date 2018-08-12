@@ -12,10 +12,4 @@ switch(button)
 	case BUTTON_Y: text = "Y"; break;
 }
 
-draw_text(x - 6, y - 6, text);
-
-text = string(points);
-
-var width = string_width(text);
-
-draw_text(x - width/2, y + sprite_height/2, text);
+draw_text(x - 5, y - 8, text);
